@@ -1,5 +1,10 @@
 <section class="sm:p-2 lg:p-8 projects-container">
-    @for(project of projectList; track project.id) {
+
+    <h2 class="m-2 capitalize">Search Project by </h2>
+      <div class="card flex justify-center mb-4">
+            <input class="w-full p-2" type="text" pInputText [(ngModel)]="searchKey" fluid placeholder="Filter by Project Name....." />
+        </div>
+    @for(project of projectList | projectFilters:searchKey; track project.id) {
     <div class="grid mt-2 shadow-2">
         <div class="col-12 md:col- lg:col-5">
             <div class=" p-3 border-round-sm  font-bold">

@@ -1,3 +1,4 @@
+import {FormsModule} from '@angular/forms'
 import { Component, inject, OnInit } from '@angular/core';
 import { Projects } from '../../services/projects';
 import { CardModule } from 'primeng/card';
@@ -7,6 +8,8 @@ import {IconFieldModule} from 'primeng/iconfield'
 import {InputIconModule} from 'primeng/inputicon'
 import {DataViewModule} from 'primeng/dataview'
 import {TagModule} from 'primeng/tag'
+import { ProjectFiltersPipe } from '../../pipes/project-filters-pipe';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-allprojects',
@@ -17,12 +20,17 @@ import {TagModule} from 'primeng/tag'
     IconFieldModule,
   InputIconModule,
 DataViewModule,
-TagModule],
+FormsModule,
+TagModule,
+ProjectFiltersPipe,
+InputTextModule
+],
   templateUrl: './allprojects.html',
   styleUrl: './allprojects.scss',
 })
 export class Allprojects  implements OnInit {
   
+  searchKey:string = ''
   projectService = inject(Projects)
   projectList:any[] = []
   
