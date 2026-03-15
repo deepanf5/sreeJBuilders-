@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, inject, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -14,6 +16,7 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 export class Header implements OnInit {
   
   items: MenuItem[] | undefined;
+  private route = inject(Router)
   
   ngOnInit(): void {
     this.items = [
@@ -26,8 +29,11 @@ export class Header implements OnInit {
                 icon: 'pi pi-search',
                 items: [
                     {
-                        label: 'Project 1',
-                        icon: 'pi pi-bolt'
+                        label: 'All projects',
+                        icon: 'pi pi-bolt',
+                        command:() => {
+                    this.route.navigate(['/projects']);
+                }
                     },
                     {
                         label: 'Project 2',

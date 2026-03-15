@@ -1,0 +1,55 @@
+<div class="p-4 md:p-6 .project-container">
+  <div class="flex justify-content-between align-items-center mb-4">
+    <div>
+      <h1 class="text-4xl font-bold m-0" [style.color]="'var(--p-primary-900)'">Seshadripuram Educational Trust</h1>
+      <p class="text-700 mt-2"><i class="pi pi-map-marker mr-2"></i>Bengaluru</p>
+    </div>
+    <p-tag value="completed" severity="success"></p-tag>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 lg:col-8">
+       <p-galleria [value]="images" [autoPlay]="true" [circular]="true" [showItemNavigators]="true"
+                    [responsiveOptions]="responsiveOptions" [showThumbnails]="false"
+                    [containerStyle]="{ 'width': '100%' }" [numVisible]="7" [circular]="true">
+                    <ng-template #item let-item>
+                        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                    <ng-template #thumbnail let-item>
+                        <img [src]="item.thumbnailImageSrc" style="width: 100%; display: block;" />
+                    </ng-template>
+                </p-galleria>
+    </div>
+
+    <div class="col-12 lg:col-4">
+      <div class="p-4 border-round-xl shadow-2 bg-white border-1" [style.border-color]="'var(--p-primary-100)'">
+        <h3 class="mt-0 mb-4" [style.color]="'var(--p-primary-800)'">Project Overview</h3>
+        
+        <div class="flex justify-content-between py-2">
+          <span class="text-600">Project cost</span>
+          <span class="font-bold">24.55 crore</span>
+        </div>
+        <p-divider></p-divider>
+        <div class="flex justify-content-between py-2">
+          <span class="text-600">Structure</span>
+          <span class="font-bold">RCC Framed</span>
+        </div>
+        <p-divider></p-divider>
+        <div class="flex justify-content-between py-2">
+          <span class="text-600">Started</span>
+          <span class="font-bold">Dec 2022</span>
+        </div>
+         <p-divider></p-divider>
+          <div class="flex justify-content-between py-2">
+          <span class="text-600">Completion</span>
+          <span class="font-bold">Dec 2024</span>
+        </div>
+         <p-divider></p-divider>
+          <div class="flex justify-content-between py-2">
+          <span class="text-600">Enginner's & Contractors</span>
+          <span class="font-bold">M/s. SreeJ Builders LLP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

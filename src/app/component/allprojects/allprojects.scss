@@ -1,0 +1,26 @@
+.projects-container {
+     height: 100%;
+    // background-image: url(../../../../public/images/hero4.jpg);
+   background-size: cover;      /* Scales the image to fill the screen */
+    background-position: center;  /* Centers the image */
+    background-attachment: fixed; /* Keeps it from scrolling with the page */
+    background-repeat: no-repeat;
+    background-image:
+    linear-gradient(to top, oklch(100% 0.00011 271.152),rgba(170, 170, 168, 0.938)),
+    url(../../../../public/images/allproject.jpg);
+}
+
+
+.primaryColor {
+    color: #81221a;
+}
+
+.hero-text {
+    font-size: 4rem;
+}
+
+@media screen and (min-width:1024px) {
+    .hero-text {
+    font-size: 5rem;
+}
+}

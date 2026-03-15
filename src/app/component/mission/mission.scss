@@ -1,0 +1,13 @@
+::ng-deep .p-card {
+    height: 80%;
+}
+
+::ng-deep .visionImg {
+    border-radius: 10%;
+}
+
+.visionImg {
+
+    width: 100%;
+    object-fit: cover;
+}

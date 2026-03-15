@@ -1,9 +1,9 @@
 <div class="grid home-container">
     <div class="col-12 md:col-6 lg:col-6 p-2">
-        <div class="p-3 border-round-sm  font-bold lg:h-20rem lg:h-screen">
-           <h1 class="hero-text mb-4 text-primary font-bold mt-8 pl-8">
+        <div class="p-3 border-round-sm  font-bold lg:h-20rem lg:h-screen lg:text-left">
+           <h1 class="hero-text mb-4 text-primary font-bold mt-8 lg:pl-8">
                     Sree J Builders LLP</h1>
-                <p class="font-semibold  text-lg pl-8 text-primary-500">
+                <p class="text-lg lg:pl-8 text-gray-500 font-normal line-height-4">
                     Specializes in modern construction, delivering innovative, sustainable, and
                     high-quality spaces designed for the future.</p>
         </div>
@@ -14,13 +14,13 @@
                     <p-card>
                         
                         <ng-template #title>
-                            <h2 class="text-center capitalize  text-lg mt-2">
-                                Welcome to the future of home 
+                            <h2 class="text-center capitalize  text-lg mt-2 text-primary">
+                              Welcome to the Future of Your Home
                             </h2>
                         </ng-template>
-                        <div>
+                        <div class="mt-4">
                             <div class="field">
-                                <label for="name">name</label>
+                                <label class="capitalize text-gray-500 font-normal" for="name">Name</label>
                                 <input pInputText [formField]="contactForm.name" id="name" 
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                      @if(contactForm.name().invalid() && (contactForm.name().dirty() ||
@@ -32,7 +32,7 @@
                         </div>
                         <div>
                             <div class="field">
-                                <label for="email">Email</label>
+                                <label class="capitalize text-gray-500 font-normal" for="email">Email</label>
                                 <input  pInputText [formField]="contactForm.email"  id="email" 
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                     @if(contactForm.email().invalid() && (contactForm.email().dirty() ||
@@ -44,7 +44,7 @@
                         </div>
                          <div>
                             <div class="field">
-                                <label for="lastname1">PhoneNumber</label>
+                                <label class="capitalize text-gray-500 font-normal" for="lastname1">PhoneNumber</label>
                                 <input  pInputText   [formField]="contactForm.phoneNumber"  id="phoneNumber"
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                     @if(contactForm.phoneNumber().invalid() && (contactForm.phoneNumber().dirty() ||
@@ -59,7 +59,7 @@
                             <div class="flex gap-4 mt-1">
                                   <p-button 
     (click)="onSubmit($event)" 
-    label="contact us" 
+    label="Contact us" 
     class="w-full" 
     styleClass="w-full"
     [disabled]="contactForm().submitting()" 
@@ -74,3 +74,9 @@
     </div>
 </div>
  
+<!-- Mission -->
+<app-mission></app-mission>
+
+<!-- About us  -->
+
+<app-about></app-about>

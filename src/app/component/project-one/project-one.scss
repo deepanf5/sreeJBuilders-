@@ -1,0 +1,29 @@
+.color3 {
+    background: #9f76ff;
+    color: aliceblue;
+}
+.color2 {
+    background: #009432;
+    color: aliceblue;
+}
+.color1 {
+    background: #00caeb;
+    color: aliceblue;
+}
+.color4 {
+    background: #7d8ea5;
+    color: aliceblue;
+}
+
+.project-container {
+     height: 100%;
+    // background-image: url(../../../../public/images/hero4.jpg);
+   background-size: cover;      /* Scales the image to fill the screen */
+    background-position: center;  /* Centers the image */
+    background-attachment: fixed; /* Keeps it from scrolling with the page */
+    background-repeat: no-repeat;
+    background-image:
+    linear-gradient(to bottom, oklch(100% 0.00011 271.152),rgb(238, 240, 233)),
+    url(../../../../public/images/hero.jpg);
+
+}

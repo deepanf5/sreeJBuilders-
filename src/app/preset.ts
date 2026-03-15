@@ -17,8 +17,9 @@ const MyGreenPreset = definePreset(Aura, {
             700: '#4a4e40', // Deep Foliage
             800: '#3a3d32', // Evergreen
             900: '#2d362b', // Deep Forest
-            950: '#1a1f18'  // Midnight Jungle
-        }
+            950: '#1a1f18',  // Midnight Jungle
+            1000:'#CD7F32'
+        },
     }
 });
 

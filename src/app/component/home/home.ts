@@ -11,6 +11,8 @@ import { CardModule } from 'primeng/card';
 import { Contact } from '../../services/contact';
 import { MessageService } from 'primeng/api';
 import { firstValueFrom } from 'rxjs';
+import { Mission } from '../mission/mission';
+import { About } from '../about/about';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,9 @@ import { firstValueFrom } from 'rxjs';
     MessageModule,
     InputMaskModule,
     ToastModule,
-    FormRoot
+    FormRoot,
+    Mission,
+    About
 ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
