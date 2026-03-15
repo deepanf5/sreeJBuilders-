@@ -12,14 +12,14 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        component: Home
+        loadComponent:() => import('../app/component/home/home').then(c => c.Home)
     },
     {
         path: 'projects',
-        component: Allprojects
+       loadComponent:() => import('../app/component/allprojects/allprojects').then(c => c.Allprojects)
     },
     {
         path: 'project',
-        component: ProjectOne
+        loadComponent:() => import('../app/component/project-one/project-one').then(c => c.ProjectOne)
     }
 ];
