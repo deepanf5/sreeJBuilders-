@@ -5,17 +5,21 @@ import { ProjectOne } from './component/project-one/project-one';
 import { Allprojects } from './component/allprojects/allprojects';
 
 export const routes: Routes = [
-
     {
-        path:'',
-        component:Home
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
     },
     {
-        path:'projects',
-        component:Allprojects
+        path: 'home',
+        component: Home
     },
     {
-        path:'projects/:id',
-        component:ProjectOne
+        path: 'projects',
+        component: Allprojects
+    },
+    {
+        path: 'project',
+        component: ProjectOne
     }
 ];

@@ -4,12 +4,12 @@ import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
-import {Router} from '@angular/router'
+import {Router, RouterLink} from '@angular/router'
 
 
 @Component({
   selector: 'app-header',
-  imports: [ButtonModule,MenubarModule,AnimateOnScrollModule],
+  imports: [ButtonModule,MenubarModule,AnimateOnScrollModule,RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -22,7 +22,10 @@ export class Header implements OnInit {
     this.items = [
             {
                 label: 'Home',
-                icon: 'pi pi-home'
+                icon: 'pi pi-home',
+                    command:() => {
+                    this.route.navigate(['/home']);
+                }
             },
             {
                 label: 'Projects',
