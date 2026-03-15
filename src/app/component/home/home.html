@@ -1,0 +1,76 @@
+<div class="grid home-container">
+    <div class="col-12 md:col-6 lg:col-6 p-2">
+        <div class="p-3 border-round-sm  font-bold lg:h-20rem lg:h-screen">
+           <h1 class="hero-text mb-4 text-primary font-bold mt-8 pl-8">
+                    Sree J Builders LLP</h1>
+                <p class="font-semibold  text-lg pl-8 text-primary-500">
+                    Specializes in modern construction, delivering innovative, sustainable, and
+                    high-quality spaces designed for the future.</p>
+        </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-6   lg:h-screen form">
+        <div class="p-2 border-round-sm  font-bold lg:h-screen lg:ml-8">
+             <form [formRoot]="contactForm">
+                    <p-card>
+                        
+                        <ng-template #title>
+                            <h2 class="text-center capitalize  text-lg mt-2">
+                                Welcome to the future of home 
+                            </h2>
+                        </ng-template>
+                        <div>
+                            <div class="field">
+                                <label for="name">name</label>
+                                <input pInputText [formField]="contactForm.name" id="name" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                     @if(contactForm.name().invalid() && (contactForm.name().dirty() ||
+                            contactForm.name().dirty())) {
+                                <p-message severity="error" variant="simple">{{contactForm.name().errors()[0].message}}</p-message>
+                
+                            }
+                            </div>
+                        </div>
+                        <div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input  pInputText [formField]="contactForm.email"  id="email" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                    @if(contactForm.email().invalid() && (contactForm.email().dirty() ||
+                                    contactForm.email().dirty())) {
+                                    <p-message  severity="error" variant="simple">{{contactForm.email().errors()[0].message}}</p-message>
+             
+                                    }
+                            </div>
+                        </div>
+                         <div>
+                            <div class="field">
+                                <label for="lastname1">PhoneNumber</label>
+                                <input  pInputText   [formField]="contactForm.phoneNumber"  id="phoneNumber"
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                    @if(contactForm.phoneNumber().invalid() && (contactForm.phoneNumber().dirty() ||
+                                    contactForm.phoneNumber().dirty())) {
+                                    <p-message severity="error" variant="simple">{{contactForm.phoneNumber().errors()[0].message}}</p-message>
+             
+                                    }
+                            </div>
+                        </div>
+
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-1">
+                                  <p-button 
+    (click)="onSubmit($event)" 
+    label="contact us" 
+    class="w-full" 
+    styleClass="w-full"
+    [disabled]="contactForm().submitting()" 
+    [loading]="contactForm().submitting()" />
+                                <p-toast></p-toast>
+                            </div>
+                        </ng-template>
+
+                    </p-card>
+                </form>
+        </div>
+    </div>
+</div>
+ 

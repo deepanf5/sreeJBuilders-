@@ -1,5 +1,16 @@
 @use "primeflex/primeflex.scss";
 
-body {
- font-family: "Roboto", sans-serif;
+*,
+::after,
+::before {
+    margin: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+

@@ -1,0 +1,30 @@
+// Remvoving the border
+::ng-deep .p-menubar {
+    border: none  !important;
+    border-bottom: 2px;
+    padding: 0 2rem 0 2rem;
+}
+
+
+/* This targets the list containing your menu items */
+::ng-deep .p-menubar .p-menubar-root-list {
+    margin-left: auto;
+}
+
+/* Optional: Align the logo container vertically */
+::ng-deep .p-menubar-start {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    width: 3rem;
+}
+
+
+
+
+
+
+
