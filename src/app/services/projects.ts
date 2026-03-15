@@ -19,6 +19,7 @@ export class Projects {
         {
           cost:'24.55 core',
           startDate:'2022',
+           duration:'2 year',
           endDate:'2024',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
@@ -73,7 +74,7 @@ export class Projects {
       ]
     },
     {
-      id:4,
+      id:5,
       client:'SPORTS AUTHORITY OF INDIA',
       projectName:'HELP DESK CENTRE AND TOILETS BLOCK',
       location:'Bengaluru',
@@ -89,7 +90,7 @@ export class Projects {
       ]
     },
      {
-      id:5,
+      id:6,
       client:'KARNATAKA HOUSING BOARD',
       projectName:'CONSTRUCTION OF FGC COLLEGE AT CHINTAMANI',
       location:'Bengaluru',
@@ -105,7 +106,7 @@ export class Projects {
       ]
     },
      {
-      id:6,
+      id:7,
       client:'SAI, NSSE, BANGALORE',
       projectName:'PROPOSED INDOOR SPORTS ARENA (T.T) AT SAI, NSSE, BANGALORE',
       location:'Bengaluru',
@@ -121,7 +122,7 @@ export class Projects {
       ]
     },
     {
-      id:6,
+      id:8,
       client:'SAI, NSSE, BANGALORE',
       projectName:'PROPOSED INDOOR SPORTS ARENA (T.T) AT SAI, NSSE, BANGALORE',
       location:'Bengaluru',

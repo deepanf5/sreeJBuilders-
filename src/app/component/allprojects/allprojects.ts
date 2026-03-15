@@ -28,7 +28,14 @@ export class Allprojects  implements OnInit {
   
   ngOnInit(): void {
 
-    this.projectService.getPorjects().subscribe(
+    this.call()
+
+
+  }
+
+
+  call() {
+     this.projectService.getPorjects().subscribe(
       {
         next:(res) => {
           this.projectList = res
