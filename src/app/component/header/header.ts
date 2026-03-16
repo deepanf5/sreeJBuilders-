@@ -56,6 +56,13 @@ export class Header implements OnInit {
                 label: 'privacy Policy',
                 icon: 'pi pi-envelope'
             },
+             {
+                label: 'Our Team',
+                icon: 'pi pi-envelope',
+                      command:() => {
+                    this.route.navigate(['/team']);
+                }
+            },
           ]
        
   }

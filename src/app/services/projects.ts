@@ -144,4 +144,10 @@ export class Projects {
   getPorjects():Observable<any[]> {
     return of(this.allProject)
   }
+
+
+  getSelectedProject(id:number) {
+    let project = this.allProject.filter((project) => project.id === id)
+    return of(project)
+  }
 }

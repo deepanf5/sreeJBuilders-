@@ -57,8 +57,8 @@ export class Allprojects implements OnInit {
     )
   }
 
-  seeDetails() {
-    this.route.navigate(['/project'])
+  seeDetails(id:number) {
+    this.route.navigateByUrl(`/project/${id}`)
 
   }
 }
