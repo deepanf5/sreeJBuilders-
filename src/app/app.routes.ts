@@ -19,7 +19,11 @@ export const routes: Routes = [
        loadComponent:() => import('../app/component/allprojects/allprojects').then(c => c.Allprojects)
     },
     {
-        path: 'project',
+        path: 'project/:id',
         loadComponent:() => import('../app/component/project-one/project-one').then(c => c.ProjectOne)
+    },
+    {
+        path: 'team',
+        loadComponent:() => import('../app/component/team/team').then(c => c.Team)
     }
 ];
