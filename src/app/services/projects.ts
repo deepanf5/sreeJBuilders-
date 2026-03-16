@@ -12,7 +12,7 @@ export class Projects {
     {
       id:1,
       client:'Seshadripuram Educational Trust',
-      projectName:'Construction of Seshadripuram College Building Veerasagara Layout At Tumkur',
+      projectName:'Construction Of Seshadripuram College Building Veerasagara Layout At Tumkur',
       location:'Bengaluru',
       iscompleted:true,
       projectOverview:[
@@ -27,7 +27,7 @@ export class Projects {
     },
     {
       id:2,
-      client:'KARNATAKA HOUSING BOARD',
+      client:'Karnataka Housing Board',
       projectName:'BASE University Auditorium Block Interiors, AV and HVAC Works',
       location:'Bengaluru',
       iscompleted:true,
@@ -43,7 +43,7 @@ export class Projects {
     },
     {
       id:3,
-      client:'KARNATAKA HOUSING BOARD',
+      client:'Karnataka Housing Board',
       projectName:'Construction of Karnataka Labour Institute Bagalugunte Bangalore.',
       location:'Bengaluru',
       iscompleted:true,
@@ -59,7 +59,7 @@ export class Projects {
     },
     {
       id:4,
-      client:'KARNATAKA HOUSING BOARD',
+      client:'Karnataka Housing Board',
       projectName:'BASE University Academic & Library Block Interiors.',
       location:'Bengaluru',
       iscompleted:true,
@@ -75,8 +75,8 @@ export class Projects {
     },
     {
       id:5,
-      client:'SPORTS AUTHORITY OF INDIA',
-      projectName:'HELP DESK CENTRE AND TOILETS BLOCK',
+      client:'Sports Authority Of India',
+      projectName:'Help Desk Centre And Toilets Block',
       location:'Bengaluru',
       iscompleted:true,
       projectOverview:[
@@ -91,8 +91,8 @@ export class Projects {
     },
      {
       id:6,
-      client:'KARNATAKA HOUSING BOARD',
-      projectName:'CONSTRUCTION OF FGC COLLEGE AT CHINTAMANI',
+      client:'Karnataka Housing Board',
+      projectName:'Construction Of Fgc College At Chintamani',
       location:'Bengaluru',
       iscompleted:true,
       projectOverview:[
@@ -107,8 +107,8 @@ export class Projects {
     },
      {
       id:7,
-      client:'SAI, NSSE, BANGALORE',
-      projectName:'PROPOSED INDOOR SPORTS ARENA (T.T) AT SAI, NSSE, BANGALORE',
+      client:'Sai, Nsse, Bangalore',
+      projectName:'Proposed Indoor Sports Arena (T.T) At Sai, Nsse, Bangalore',
       location:'Bengaluru',
       iscompleted:false,
       projectOverview:[
@@ -123,8 +123,8 @@ export class Projects {
     },
     {
       id:8,
-      client:'SAI, NSSE, BANGALORE',
-      projectName:'PROPOSED INDOOR SPORTS ARENA (T.T) AT SAI, NSSE, BANGALORE',
+      client:'Sai, Nsse, Bangalore',
+      projectName:'Proposed Indoor Sports Arena (T.T) At Sai, Nsse, Bangalore',
       location:'Bengaluru',
       iscompleted:false,
       projectOverview:[

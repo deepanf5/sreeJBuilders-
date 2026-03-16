@@ -1,54 +1,37 @@
 <section class="sm:p-2 lg:p-8 projects-container">
 
     <h2 class="m-2 capitalize">Search Project by </h2>
-      <div class="card flex justify-center mb-4">
-            <input class="w-full p-2" type="text" pInputText [(ngModel)]="searchKey" fluid placeholder="Filter by Project Name....." />
-        </div>
+    <div class="card p-2 flex justify-center mb-4">
+        <input class="w-full p-2" type="text" pInputText [(ngModel)]="searchKey" fluid
+            placeholder="Filter by Project Name....." />
+    </div>
     @for(project of projectList | projectFilters:searchKey; track project.id) {
-    <div class="grid mt-2 shadow-2">
+    <div class="grid mt-2 shadow-2 m-2">
         <div class="col-12 md:col- lg:col-5">
             <div class=" p-3 border-round-sm  font-bold">
                 <img class="Image" src="images/hero3.jpg" alt="">
             </div>
         </div>
         <div class="col-12 md:col-6 lg:col-7">
-            <div class="p-3 text-left border-round-sm line-height-4">
+            <div class="p-3 text-left border-round-sm  line-height-4">
                 @if(project.iscompleted) {
                 <p-tag class="pb-2 mb-3" value="completed" severity="success"></p-tag>
                 }
                 @else {
                 <p-tag class="pb-2 mb-3" value="In progress" severity="warn"></p-tag>
                 }
-                <h2 class="text-capitalize text-primary sm:text-xs lg:text-lg">{{project.projectName}}</h2>
-                <h2 class="text-capitalize text-primary sm:text-xs lg:text-lg">{{project.client}}</h2>
+                <h2 class="text-primary text-sm lg:text-base">{{project.projectName}}</h2>
+                <h2 class="text-primary text-sm lg:text-base">{{project.client}}</h2>
 
-                <div class="flex flex-wrap">
-                        @for(detail of project.projectOverview; track detail) {
-                        <div
-                            class="flex-1 md:flex-none flex align-items-center  justify-content-center font-bold  border-round">
-                            <p><i class="pi pi-indian-rupee mr-2" style="font-size: 1rem"></i> <p-tag severity="secondary" [value]="detail.cost" /></p>
-                        </div>
-                        <div
-                            class="flex-1 md:flex-none flex align-items-center justify-content-center font-bold m-2 px-2 py-3  border-round">
-                           <p><i class="pi pi-calendar mr-2" style="font-size:1rem"></i><p-tag severity="secondary" [value]="detail.startDate"></p-tag></p>
-                        </div>
-                        <div
-                            class="flex-1 md:flex-none flex align-items-center justify-content-center  font-bold m-2 px-2 py-3  border-round">
-                           <p><i class="pi pi-calendar mr-2" style="font-size: 1rem"></i> <p-tag severity="secondary" [value]="detail.endDate"></p-tag></p>
-                        </div>
-                        <div
-                            class="flex-1 md:flex-none flex align-items-center justify-content-center  font-bold m-2 px-2 py-3 border-round">
-                          <p><i class="pi pi-check-circle mr-2" style="font-size: 1rem"></i><p-tag severity="secondary" [value]="detail.duration"></p-tag></p>
-                        </div>
-                        <div
-                            class="flex-1 md:flex-none flex align-items-center justify-content-center  font-bold m-2 px-2 py-3 border-round">
-                          <p><i class="pi pi-users mr-2" style="font-size:1rem"></i><p-tag severity="secondary" [value]="detail.EngineerNTeam"></p-tag></p>
-                        </div>
-
-    
+                <div class="card flex flex-wrap justify-center gap-3 mt-3">
+                    @for(detail of project.projectOverview; track detail) {
+                    <p-tag icon="pi pi-indian-rupee" severity="secondary"[value]="detail.cost" />
+                    <p-tag icon="pi pi-calendar" severity="secondary" [value]="detail.startDate" />
+                    <p-tag icon="pi pi-calendar" severity="secondary" [value]="detail.endDate" />
+                    <p-tag icon="pi pi-check-circle" severity="secondary" [value]="detail.duration" />
+                    <p-tag icon="pi pi-users" severity="secondary" [value]="detail.EngineerNTeam" />
                     }
                 </div>
-
 
                 <p class="mt-3 mb-2"><i class="pi pi-map-marker mr-2" style="font-size: 1rem"></i>{{project.location}}
                 </p>
