@@ -28,7 +28,7 @@ export class Projects {
     {
       id:2,
       client:'Karnataka Housing Board',
-      projectName:'BASE University Auditorium Block Interiors, AV and HVAC Works',
+      projectName:'Base University Auditorium Block Interiors, AV and HVAC Works',
       location:'Bengaluru',
       iscompleted:true,
       projectOverview:[
@@ -60,7 +60,7 @@ export class Projects {
     {
       id:4,
       client:'Karnataka Housing Board',
-      projectName:'BASE University Academic & Library Block Interiors.',
+      projectName:'base University Academic & Library Block Interiors.',
       location:'Bengaluru',
       iscompleted:true,
       projectOverview:[
