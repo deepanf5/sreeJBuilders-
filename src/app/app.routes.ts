@@ -27,4 +27,5 @@ export const routes: Routes = [
         path: 'team',
         loadComponent:() => import('../app/component/team/team').then(c => c.Team)
     }
+    
 ];
