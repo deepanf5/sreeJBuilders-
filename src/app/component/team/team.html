@@ -1,12 +1,21 @@
- 
-            <p-organization-chart [value]="data">
-                <ng-template let-node pTemplate="person">
-                    <div class="flex flex-col">
-                        <div class="">
-                            <div class="font-bold  text-center text-sm">{{ node.data.name }}</div>
-                            <div class="text-center text-sm mt-2">{{ node.label }}</div>
+
+<div class="grid">
+    <!-- Use col-12 to let it take full width, or keep your responsive logic -->
+    <div class="col-12">
+        <div class="p-1 border-round-sm surface-card">
+            
+            <!-- This wrapper is the secret to responsiveness -->
+            <div class="overflow-x-auto white-space-nowrap pb-3">
+                <p-organization-chart [value]="data" selectionMode="single">
+                    <ng-template let-node pTemplate="person">
+                        <div class="flex flex-column align-items-center">
+                            <div class="font-bold text-center text-sm">{{ node.data.name }}</div>
+                            <div class="text-center text-sm mt-2 text-600">{{ node.label }}</div>
                         </div>
-                    </div>
-                </ng-template>
-            </p-organization-chart>
-      
+                    </ng-template>
+                </p-organization-chart>
+            </div>
+
+        </div>
+    </div>
+</div>
