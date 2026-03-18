@@ -21,6 +21,7 @@ export const routes: Routes = [
     {
         path: 'project/:id',
         loadComponent:() => import('../app/component/project-one/project-one').then(c => c.ProjectOne)
+        
     },
     {
         path: 'team',

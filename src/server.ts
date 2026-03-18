@@ -12,6 +12,22 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+
+import { RenderMode, ServerRoute } from '@angular/ssr';
+
+export const serverRoutes: ServerRoute[] = [
+  {
+    path: 'project/:id',
+    renderMode: RenderMode.Prerender,
+    // Return an array of objects matching your route params
+    async getPrerenderParams() {
+      // Typically you would fetch these from an API
+      const projectIds = ['1', '2', '3','4','5','6']; 
+      return projectIds.map(id => ({ id }));
+    },
+  }
+];
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
