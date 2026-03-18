@@ -1,11 +1,12 @@
-import { Component, inject, model, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, model, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { GalleriaModule } from 'primeng/galleria';
 import { TableModule } from 'primeng/table';
 import { DividerModule } from 'primeng/divider';
 import { TagModule } from 'primeng/tag';
 import { Projects } from '../../services/projects';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 interface Photo {
     itemImageSrc: string;
@@ -37,6 +38,7 @@ export class ProjectOne implements OnInit {
 
     projectservice = inject(Projects)
     route = inject(ActivatedRoute)
+      destoryRef  = inject(DestroyRef)
 
     responsiveOptions: any[] = [
         {
@@ -128,19 +130,19 @@ export class ProjectOne implements OnInit {
 
     getProject() {
 
-        this.projectservice.getSelectedProject(this.projectId).subscribe(
-            {
-                next: (res: any) => {
-                    this.project = {
-                        ...res[0],
-                        ...res[0].projectOverview[0]
-                    };
-                },
-                error: (err) => {
-                    console.error(err)
-                }
-            }
-        )
+       this.projectservice.getSelectedProject(this.projectId)
+  .pipe(takeUntilDestroyed(this.destoryRef))
+  .subscribe({
+    next: (res: any) => {
+      this.project = {
+        ...res[0],
+        ...res[0].projectOverview[0]
+      };
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  });
     }
 
 

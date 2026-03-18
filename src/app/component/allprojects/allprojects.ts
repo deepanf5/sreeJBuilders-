@@ -1,5 +1,6 @@
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop'
 import { FormsModule } from '@angular/forms'
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { Projects } from '../../services/projects';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -35,6 +36,8 @@ export class Allprojects implements OnInit {
   projectService = inject(Projects);
   projectList: any[] = [];
 
+  destoryRef  = inject(DestroyRef)
+
   route = inject(Router)
 
   ngOnInit(): void {
@@ -45,16 +48,16 @@ export class Allprojects implements OnInit {
 
 
   call() {
-    this.projectService.getPorjects().subscribe(
-      {
-        next: (res) => {
-          this.projectList = res
-        },
-        error: (err) => {
-          console.error(err)
-        }
+    this.projectService.getPorjects()
+    .pipe(takeUntilDestroyed(this.destoryRef))
+    .subscribe({
+      next: (res) => {
+        this.projectList = res;
+      },
+      error: (err) => {
+        console.error(err);
       }
-    )
+    });
   }
 
   seeDetails(id:number) {
