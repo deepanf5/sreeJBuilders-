@@ -50,7 +50,10 @@ export class Header implements OnInit {
             },
             {
                 label: 'Contact',
-                icon: 'pi pi-envelope'
+                icon: 'pi pi-envelope',
+                     command:() => {
+                    this.route.navigate(['/contact']);
+                }
             },
              {
                 label: 'privacy Policy',

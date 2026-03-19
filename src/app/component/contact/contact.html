@@ -1,0 +1,149 @@
+<section class="contactUs h-full">
+
+    <div class="grid m-2">
+        <div class="col-12 md:col-6 lg:col-4">
+            <div class="p-1 lg:p-5 border-round-sm h-full line-height-4">
+
+                <div>
+                    <h2>Get in Touch</h2>
+                    <p class="mt-5">
+                        We're here to help turn your ideas into a finished project. Tell us what you're looking for, and
+                        our team will get back to you with the best way forward.
+                    </p>
+                </div>
+
+                <div class="info lg:mt-8">
+                    <div class="mt-2">
+                        <i class="pi pi-map-marker" style="color: green"></i>
+                        <span class="ml-2">9th cross, L. N. PURAM, Bangalore - 560 021</span>
+                    </div>
+                    <div class="mt-2">
+                        <i class="pi pi-phone" style="color: green"></i>
+                        <span class="ml-2">+91 9606200939</span>
+                    </div>
+                    <div class="mt-2">
+                        <i class="pi pi-send" style="color: green"></i>
+                        <span class="ml-2">sreebuilders09@gmail.com</span>
+                    </div>
+                    <div class="mt-2">
+                        <i class="pi pi-send" style="color: green"></i>
+                        <span class="ml-2">sreejbuilders@gmail.com</span>
+                    </div>
+                </div>
+
+                <!-- Social network -->
+
+                <div class="grid p-0 mt-5">
+    <div class="col-3 md:col-6 lg:col-3">
+        <div class="p-3 pl-0 border-round-sm">
+            <i class="pi pi-facebook" style="color: green"></i>
+        </div>
+    </div>
+    <div class="col-3 md:col-6 lg:col-3">
+        <div class="p-3 pl-0 border-round-sm">
+            <i class="pi pi-instagram" style="color: green"></i>
+        </div>
+    </div>
+    <div class="col-3 md:col-6 lg:col-3">
+        <div class="p-3 pl-0 border-round-sm">
+            <i class="pi pi-linkedin" style="color: green"></i>
+        </div>
+    </div>
+    <div class="col-3 md:col-6 lg:col-3">
+        <div class="p-3 pl-0 border-round-sm">
+            <i class="pi pi-whatsapp" style="color: green"></i>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-8">
+            <div class="p-3 border-round-sm  font-bold">
+
+                <h2 class="mb-4 text-center">Send us a Message..</h2>
+                <form  [formRoot]="contactForm">
+                        <p-card class="mt-5">
+
+                        <div class="grid">
+                            <div class="col-12 md:col-6 lg:col-6">
+                                <div class="p-3 border-round-sm  font-bold">
+                                
+                                    <label for="name">Name</label>
+                                        <input pInputText [formField]="contactForm.name" id="name" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                     @if(contactForm.name().invalid() && (contactForm.name().dirty() ||
+                            contactForm.name().dirty())) {
+                                <p-message severity="error" variant="simple">{{contactForm.name().errors()[0].message}}</p-message>
+                
+                            }
+                                                        
+                                </div>
+
+                            </div>
+                            <div class="col-12 md:col-6 lg:col-6">
+                                <div class="text-center p-3 border-round-sm  font-bold">
+                                
+                                    <label for="CompanyName">Company Name</label>
+                                       <input pInputText [formField]="contactForm.companyName" id="name" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                     @if(contactForm.companyName().invalid() && (contactForm.companyName().dirty() ||
+                            contactForm.companyName().dirty())) {
+                                <p-message severity="error" variant="simple">{{contactForm.companyName().errors()[0].message}}</p-message>
+                
+                            }
+                    
+                                </div>
+                            </div>
+                            <div class="col-12 md:col-6 lg:col-6">
+                                <div class="p-3 border-round-sm  font-bold">
+                                 
+                                    <label for="phoneNumber">Phone Number</label>
+<input pInputText [formField]="contactForm.phoneNumber" id="name" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                     @if(contactForm.phoneNumber().invalid() && (contactForm.phoneNumber().dirty() ||
+                            contactForm.phoneNumber().dirty())) {
+                                <p-message severity="error" variant="simple">{{contactForm.phoneNumber().errors()[0].message}}</p-message>
+                
+                            }
+                                </div>
+                            </div>
+                            <div class="col-12 md:col-6 lg:col-6">
+                                <div class="p-3 border-round-sm  font-bold">
+                                
+                                    <label for="email">Email</label>
+                                        <input pInputText [formField]="contactForm.email" id="name" 
+                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                     @if(contactForm.email().invalid() && (contactForm.email().dirty() ||
+                            contactForm.email().dirty())) {
+                                <p-message severity="error" variant="simple">{{contactForm.email().errors()[0].message}}</p-message>
+                
+                            }
+                    
+                                </div>
+                            </div>
+                            <div class="col-12 md:col-6 lg:col-12">
+                                <div class="p-3 border-round-sm  font-bold">
+                                
+                                    <label for="message">Message</label>
+                                        <textarea class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" rows="5" cols="30" pTextarea fluid></textarea>
+                    
+                                </div>
+                            </div>
+                            <div class="col-12 md:col-6 lg:col-12">
+                                <p-button (click)="onSubmit($event)" label="Send" class="w-full" styleClass="w-full"
+                                    [disabled]="contactForm().submitting()" [loading]="contactForm().submitting()" />
+                                   <p-toast></p-toast>
+                                </div>
+
+                        </div>
+                    </p-card>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>

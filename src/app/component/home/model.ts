@@ -4,3 +4,14 @@ export interface ContactFormI {
     email:string,
     phoneNumber:string
 }
+
+
+export interface ContactForm2I {
+      name:string,
+    email:string,
+    phoneNumber:string,
+    companyName:string,
+    message:string
+
+
+}

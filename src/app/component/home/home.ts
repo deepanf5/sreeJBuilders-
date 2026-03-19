@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { ContactFormI } from './model';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
-import { Contact } from '../../services/contact';
+import { ContactS } from '../../services/contact';
 import { MessageService } from 'primeng/api';
 import { firstValueFrom } from 'rxjs';
 import { Mission } from '../mission/mission';
@@ -41,7 +41,7 @@ export class Home implements OnInit {
   private readonly model = signal<ContactFormI>({...this.initialData})
  
 
-  contactServices = inject(Contact);
+  contactServices = inject(ContactS);
   private messageService = inject(MessageService);
   
 

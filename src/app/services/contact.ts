@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class Contact {
+export class ContactS {
 
   private http = inject(HttpClient)
   private url = 'https://formspree.io/f/mdawlggb'

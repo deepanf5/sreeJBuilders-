@@ -18,6 +18,10 @@ export const routes: Routes = [
         path: 'projects',
        loadComponent:() => import('../app/component/allprojects/allprojects').then(c => c.Allprojects)
     },
+       {
+        path: 'contact',
+       loadComponent:() => import('../app/component/contact/contact').then(c => c.Contact)
+    },
     {
         path: 'project/:id',
         loadComponent:() => import('../app/component/project-one/project-one').then(c => c.ProjectOne)
