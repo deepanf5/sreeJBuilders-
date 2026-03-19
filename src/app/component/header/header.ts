@@ -37,14 +37,6 @@ export class Header implements OnInit {
                         command:() => {
                     this.route.navigate(['/projects']);
                 }
-                    },
-                    {
-                        label: 'Project 2',
-                        icon: 'pi pi-server'
-                    },
-                    {
-                        label: 'Project 3',
-                        icon: 'pi pi-pencil'
                     }
                 ]
             },
@@ -57,11 +49,11 @@ export class Header implements OnInit {
             },
              {
                 label: 'privacy Policy',
-                icon: 'pi pi-envelope'
+                icon: 'pi pi-file'
             },
              {
                 label: 'Our Team',
-                icon: 'pi pi-envelope',
+                icon: 'pi pi-users',
                       command:() => {
                     this.route.navigate(['/team']);
                 }
