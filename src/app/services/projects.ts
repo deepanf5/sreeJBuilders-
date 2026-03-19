@@ -23,6 +23,15 @@ export class Projects {
           endDate:'2024',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+      images:[
+        {
+            itemImageSrc: 'images/project1/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project1/image2.png',
+        },
+       
       ]
     },
     {
@@ -39,6 +48,18 @@ export class Projects {
           duration:'12 month',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+         images:[
+        {
+            itemImageSrc: 'images/project2/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project2/image2.png',
+        },
+        {
+            itemImageSrc: 'images/project2/image3.png',
+        },
+       
       ]
     },
     {
@@ -55,6 +76,16 @@ export class Projects {
           duration:'11 Month',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+      images:[
+        {
+            itemImageSrc: 'images/project3/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project3/image2.png',
+        },
+      
+       
       ]
     },
     {
@@ -71,7 +102,18 @@ export class Projects {
           duration:'1 year',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+       images:[
+        {
+            itemImageSrc: 'images/project4/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project4/image2.png',
+        },
+      
+       
       ]
+        
     },
     {
       id:5,
@@ -87,6 +129,16 @@ export class Projects {
           duration:'5 Months',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+       images:[
+        {
+            itemImageSrc: 'images/project5/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project5/image2.png',
+        },
+      
+       
       ]
     },
      {
@@ -103,6 +155,22 @@ export class Projects {
           duration:'31 Months',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+        images:[
+        {
+            itemImageSrc: 'images/project6/image1.png',
+        },
+        {
+            itemImageSrc: 'images/project6/image2.png',
+        },
+        {
+            itemImageSrc: 'images/project6/image3.png',
+        },
+        {
+            itemImageSrc: 'images/project6/image4.png',
+        },
+      
+       
       ]
     },
      {
@@ -119,6 +187,14 @@ export class Projects {
           duration:'10 Month',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+        images:[
+        {
+            itemImageSrc: 'images/project7/image1.png',
+        },
+       
+      
+       
       ]
     },
     {
@@ -135,6 +211,11 @@ export class Projects {
           duration:'10 Month',
           EngineerNTeam:'M/s. SreeJ Builders LLP'
         }
+      ],
+       images:[
+        {
+            itemImageSrc: 'images/project8/image1.png',
+        },
       ]
     }
   ]

@@ -66,44 +66,44 @@ export class ProjectOne implements OnInit {
         this.route.params.subscribe(params => {
             this.projectId = Number(params['id']); // 'id' should match the route param name
         });
-        this.images = [
-            {
-                itemImageSrc: 'images/hero3.jpg',
-                thumbnailImageSrc: 'images/hero3.jpg',
-                alt: 'Minimalist living room with Espresso accents',
-                title: 'The Modern Living Space'
-            },
-            {
-                itemImageSrc: 'images/hero.jpg',
-                thumbnailImageSrc: 'images/hero.jpg',
-                alt: 'Eco-friendly kitchen in Forest Green',
-                title: 'Sustainable Culinary Design'
-            },
-            {
-                itemImageSrc: 'images/hero4.jpg',
-                thumbnailImageSrc: 'images/hero4.jpg',
-                alt: 'Smart home bedroom integration',
-                title: 'Restful Automation'
-            },
-            {
-                itemImageSrc: 'images/hero3.jpg',
-                thumbnailImageSrc: 'images/hero3.jpg',
-                alt: 'Minimalist living room with Espresso accents',
-                title: 'The Modern Living Space'
-            },
-            {
-                itemImageSrc: 'images/hero.jpg',
-                thumbnailImageSrc: 'images/hero.jpg',
-                alt: 'Eco-friendly kitchen in Forest Green',
-                title: 'Sustainable Culinary Design'
-            },
-            {
-                itemImageSrc: 'images/hero4.jpg',
-                thumbnailImageSrc: 'images/hero4.jpg',
-                alt: 'Smart home bedroom integration',
-                title: 'Restful Automation'
-            }
-        ];
+        // this.images = [
+        //     {
+        //         itemImageSrc: 'images/hero3.jpg',
+        //         thumbnailImageSrc: 'images/hero3.jpg',
+        //         alt: 'Minimalist living room with Espresso accents',
+        //         title: 'The Modern Living Space'
+        //     },
+        //     {
+        //         itemImageSrc: 'images/hero.jpg',
+        //         thumbnailImageSrc: 'images/hero.jpg',
+        //         alt: 'Eco-friendly kitchen in Forest Green',
+        //         title: 'Sustainable Culinary Design'
+        //     },
+        //     {
+        //         itemImageSrc: 'images/hero4.jpg',
+        //         thumbnailImageSrc: 'images/hero4.jpg',
+        //         alt: 'Smart home bedroom integration',
+        //         title: 'Restful Automation'
+        //     },
+        //     {
+        //         itemImageSrc: 'images/hero3.jpg',
+        //         thumbnailImageSrc: 'images/hero3.jpg',
+        //         alt: 'Minimalist living room with Espresso accents',
+        //         title: 'The Modern Living Space'
+        //     },
+        //     {
+        //         itemImageSrc: 'images/hero.jpg',
+        //         thumbnailImageSrc: 'images/hero.jpg',
+        //         alt: 'Eco-friendly kitchen in Forest Green',
+        //         title: 'Sustainable Culinary Design'
+        //     },
+        //     {
+        //         itemImageSrc: 'images/hero4.jpg',
+        //         thumbnailImageSrc: 'images/hero4.jpg',
+        //         alt: 'Smart home bedroom integration',
+        //         title: 'Restful Automation'
+        //     }
+        // ];
         this.setValue();
         this.getProject()
 
@@ -138,6 +138,7 @@ export class ProjectOne implements OnInit {
         ...res[0],
         ...res[0].projectOverview[0]
       };
+      this.images = res[0].images
     },
     error: (err) => {
       console.error(err);
