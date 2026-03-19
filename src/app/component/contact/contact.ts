@@ -1,17 +1,16 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CardModule } from 'primeng/card';
 import { TextareaModule } from 'primeng/textarea';
 import { ButtonModule } from 'primeng/button';
-import { email, form, FormField, FormRoot, maxLength, minLength, required, submit } from '@angular/forms/signals';
-import { ContactForm2I, ContactFormI } from '../home/model';
 import { MessageService } from 'primeng/api';
 import { firstValueFrom } from 'rxjs';
 import { ContactS } from '../../services/contact';
 import { InputMaskModule } from 'primeng/inputmask';
 import { ToastModule } from 'primeng/toast';
 import { MessageModule } from 'primeng/message';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
@@ -21,79 +20,92 @@ import { MessageModule } from 'primeng/message';
     ButtonModule,
     InputMaskModule,
     ToastModule,
-    FormRoot,
-    FormField,
+    ReactiveFormsModule,
     MessageModule
   ],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
   providers: [MessageService]
 })
-export class Contact {
+export class Contact implements OnInit {
+ 
   contactServices = inject(ContactS);
+  contactForm: FormGroup
   private messageService = inject(MessageService);
+  message:string = ''
+  
+    submitted = false;  
+  isLoading = false;  
+
+
+
+  constructor(private fb:FormBuilder){
+      this.contactForm = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(150)]],
+    companyName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(150)]],
+    email: ['', [Validators.required, Validators.email]],
+    phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+    message: ['', Validators.required] // Add validation back
+  });
+  }
 
   private readonly initialData = {
     name: '',
     companyName: '',
     email: '',
     phoneNumber: '',
-    message: ''
+    message:''
   };
 
 
+ 
 
 
-  private readonly model = signal<ContactForm2I>({ ...this.initialData })
+   ngOnInit(): void {
 
-  readonly contactForm = form(this.model, (schema) => {
-    required(schema.name, { message: 'Name is required' });
-    required(schema.email, { message: 'Email is required' });
-    required(schema.phoneNumber, { message: 'PhoneNumber is required' });
-    required(schema.companyName,  { message: 'CompanyName is Required' });
-    required(schema.message,  { message: 'CompanyName is Required' });
-    
-    minLength(schema.name, 3, { message: 'Name is too short' });
-    minLength(schema.phoneNumber, 11, { message: 'Please enter a Valid phoneNumber' });
-    minLength(schema.companyName, 3, { message: 'Company is too short '});
-    minLength(schema.message, 4, { message: 'Message is too short.' });
-    
-    maxLength(schema.name, 150, { message: 'Exceeds the maximum length.' });
-    maxLength(schema.companyName, 150, { message: 'Exceeds the maximum length.' });
+  
 
-    maxLength(schema.message, 650, { message: 'Exceeds the maximum length.' });
-    maxLength(schema.phoneNumber, 10, { message: 'Exceeds the maximum length.' });
-    email(schema.email, { message: 'Please Enter a valid Email address' });
-  });
+  }
 
 
-  async onSubmit(event: Event) {
-    event.preventDefault();
-    await submit(this.contactForm, async (f) => {
-      const formData = this.model();
 
-      try {
-        const res: any = await firstValueFrom(this.contactServices.sendEmail(formData))
 
-        if (res.ok) {
-          this.showSuccess()
-          f().reset({
-            name: '',
-            email: '',
-            phoneNumber: '',
-            companyName: '',
-            message: ''
-          })
+  onSubmit() {
+     this.isLoading = true;
 
-          return undefined
-        }
-      } catch (err) {
-        this.showError()
-        return undefined
+    this.contactServices.sendEmail(this.contactForm.value).subscribe(
+      {
+        next:(res:any) => {
+          if(res.ok) {
+            this.showSuccess()
+            this.contactForm.reset()
+            this.isLoading = false;
+
+          }
+        },
+        error:((err) => {
+          console.error(err)
+          this.showError();
+           this.isLoading = false; 
+        })
       }
+    )
+   
 
-    });
+  }
 
+
+
+   getErrorMessage(controlName: string): string {
+    const control = this.contactForm.get(controlName);
+    if (!control?.errors) return '';
+
+    const errors = control.errors!;
+    if (errors['required']) return `${controlName} is required`;
+    if (errors['email']) return 'Please enter a valid email address';
+    if (errors['minlength']) return `${controlName} is too short`;
+    if (errors['maxlength']) return 'Exceeds the maximum length';
+    return '';
   }
 
 
@@ -103,6 +115,9 @@ export class Contact {
   showError() {
     this.messageService.add({ severity: 'success', summary: 'Info', detail: 'Something Went Wrong' });
   }
+
+
+
 
 
 }

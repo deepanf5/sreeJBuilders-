@@ -12,7 +12,7 @@
                     </p>
                 </div>
 
-                <div class="info lg:mt-8">
+                <div class="info  mt-4 lg:mt-8">
                     <div class="mt-2">
                         <i class="pi pi-map-marker" style="color: green"></i>
                         <span class="ml-2">9th cross, L. N. PURAM, Bangalore - 560 021</span>
@@ -63,83 +63,116 @@
             <div class="p-3 border-round-sm  font-bold">
 
                 <h2 class="mb-4 text-center">Send us a Message..</h2>
-                <form  [formRoot]="contactForm">
-                        <p-card class="mt-5">
+               <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <p-card class="mt-5">
+    <div class="grid">
+      <!-- Name -->
+      <div class="col-12 md:col-6 lg:col-6">
+        <div class="p-3 border-round-sm font-bold">
+          <label for="name">Name</label>
+          <input 
+            pInputText 
+            id="name"
+            formControlName="name"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+          @if (contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)) {
+            <p-message severity="error" variant="simple">
+              {{ getErrorMessage('name') }}
+            </p-message>
+          }
+        </div>
+      </div>
 
-                        <div class="grid">
-                            <div class="col-12 md:col-6 lg:col-6">
-                                <div class="p-3 border-round-sm  font-bold">
-                                
-                                    <label for="name">Name</label>
-                                        <input pInputText [formField]="contactForm.name" id="name" 
-                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-                                     @if(contactForm.name().invalid() && (contactForm.name().dirty() ||
-                            contactForm.name().dirty())) {
-                                <p-message severity="error" variant="simple">{{contactForm.name().errors()[0].message}}</p-message>
-                
-                            }
-                                                        
-                                </div>
+      <!-- Company Name -->
+      <div class="col-12 md:col-6 lg:col-6">
+        <div class="p-3 border-round-sm font-bold">
+          <label for="companyName">Company Name</label>
+          <input 
+            pInputText 
+            id="companyName"
+            formControlName="companyName"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+          @if (contactForm.get('companyName')?.invalid && (contactForm.get('companyName')?.dirty || contactForm.get('companyName')?.touched)) {
+            <p-message severity="error" variant="simple">
+              {{ getErrorMessage('companyName') }}
+            </p-message>
+          }
+        </div>
+      </div>
 
-                            </div>
-                            <div class="col-12 md:col-6 lg:col-6">
-                                <div class="text-center p-3 border-round-sm  font-bold">
-                                
-                                    <label for="CompanyName">Company Name</label>
-                                       <input pInputText [formField]="contactForm.companyName" id="name" 
-                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-                                     @if(contactForm.companyName().invalid() && (contactForm.companyName().dirty() ||
-                            contactForm.companyName().dirty())) {
-                                <p-message severity="error" variant="simple">{{contactForm.companyName().errors()[0].message}}</p-message>
-                
-                            }
-                    
-                                </div>
-                            </div>
-                            <div class="col-12 md:col-6 lg:col-6">
-                                <div class="p-3 border-round-sm  font-bold">
-                                 
-                                    <label for="phoneNumber">Phone Number</label>
-<input pInputText [formField]="contactForm.phoneNumber" id="name" 
-                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-                                     @if(contactForm.phoneNumber().invalid() && (contactForm.phoneNumber().dirty() ||
-                            contactForm.phoneNumber().dirty())) {
-                                <p-message severity="error" variant="simple">{{contactForm.phoneNumber().errors()[0].message}}</p-message>
-                
-                            }
-                                </div>
-                            </div>
-                            <div class="col-12 md:col-6 lg:col-6">
-                                <div class="p-3 border-round-sm  font-bold">
-                                
-                                    <label for="email">Email</label>
-                                        <input pInputText [formField]="contactForm.email" id="name" 
-                                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-                                     @if(contactForm.email().invalid() && (contactForm.email().dirty() ||
-                            contactForm.email().dirty())) {
-                                <p-message severity="error" variant="simple">{{contactForm.email().errors()[0].message}}</p-message>
-                
-                            }
-                    
-                                </div>
-                            </div>
-                            <div class="col-12 md:col-6 lg:col-12">
-                                <div class="p-3 border-round-sm  font-bold">
-                                
-                                    <label for="message">Message</label>
-                                        <textarea class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" rows="5" cols="30" pTextarea fluid></textarea>
-                    
-                                </div>
-                            </div>
-                            <div class="col-12 md:col-6 lg:col-12">
-                                <p-button (click)="onSubmit($event)" label="Send" class="w-full" styleClass="w-full"
-                                    [disabled]="contactForm().submitting()" [loading]="contactForm().submitting()" />
-                                   <p-toast></p-toast>
-                                </div>
+      <!-- Phone Number -->
+      <div class="col-12 md:col-6 lg:col-6">
+        <div class="p-3 border-round-sm font-bold">
+          <label for="phoneNumber">Phone Number</label>
+          <input 
+            pInputText 
+            id="phoneNumber"
+            formControlName="phoneNumber"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+          @if (contactForm.get('phoneNumber')?.invalid && (contactForm.get('phoneNumber')?.dirty || contactForm.get('phoneNumber')?.touched)) {
+            <p-message severity="error" variant="simple">
+              {{ getErrorMessage('phoneNumber') }}
+            </p-message>
+          }
+        </div>
+      </div>
 
-                        </div>
-                    </p-card>
-                    </form>
+      <!-- Email -->
+      <div class="col-12 md:col-6 lg:col-6">
+        <div class="p-3 border-round-sm font-bold">
+          <label for="email">Email</label>
+          <input 
+            pInputText 
+            id="email"
+            formControlName="email"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+          @if (contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)) {
+            <p-message severity="error" variant="simple">
+              {{ getErrorMessage('email') }}
+            </p-message>
+          }
+        </div>
+      </div>
+
+      <!-- Message - NOW WORKS WITH PRIMENG -->
+      <div class="col-12 md:col-6 lg:col-12">
+        <div class="p-3 border-round-sm font-bold">
+          <label for="message">Message</label>
+          <textarea 
+            pInputTextarea
+            id="message"
+            formControlName="message"
+            rows="5"
+            cols="30"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          ></textarea>
+          @if (contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)) {
+            <p-message severity="error" variant="simple">
+              Message is required
+            </p-message>
+          }
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-12 md:col-6 lg:col-12">
+       <p-button 
+  (click)="onSubmit()" 
+  [label]="isLoading ? 'Sending...' : 'Send'"
+  icon="pi pi-send"
+  [loading]="isLoading"
+  [disabled]="contactForm.invalid || isLoading"
+  class="w-full"
+/>
+        <p-toast></p-toast>
+      </div>
+    </div>
+  </p-card>
+</form>
             </div>
         </div>
     </div>

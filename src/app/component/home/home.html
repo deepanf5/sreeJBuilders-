@@ -24,7 +24,7 @@
                                 <input pInputText [formField]="contactForm.name" id="name" 
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                      @if(contactForm.name().invalid() && (contactForm.name().dirty() ||
-                            contactForm.name().dirty())) {
+                            contactForm.name().touched())) {
                                 <p-message severity="error" variant="simple">{{contactForm.name().errors()[0].message}}</p-message>
                 
                             }
@@ -36,7 +36,7 @@
                                 <input  pInputText [formField]="contactForm.email"  id="email" 
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                     @if(contactForm.email().invalid() && (contactForm.email().dirty() ||
-                                    contactForm.email().dirty())) {
+                                    contactForm.email().touched())) {
                                     <p-message  severity="error" variant="simple">{{contactForm.email().errors()[0].message}}</p-message>
              
                                     }
@@ -48,7 +48,7 @@
                                 <input  pInputText   [formField]="contactForm.phoneNumber"  id="phoneNumber"
                                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
                                     @if(contactForm.phoneNumber().invalid() && (contactForm.phoneNumber().dirty() ||
-                                    contactForm.phoneNumber().dirty())) {
+                                    contactForm.phoneNumber().touched())) {
                                     <p-message severity="error" variant="simple">{{contactForm.phoneNumber().errors()[0].message}}</p-message>
              
                                     }
