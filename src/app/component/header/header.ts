@@ -25,7 +25,9 @@ export class Header implements OnInit {
                 icon: 'pi pi-home',
                     command:() => {
                     this.route.navigate(['/home']);
-                }
+                    
+                },
+                 routerLinkActiveOptions: { exact: true } 
             },
             {
                 label: 'Projects',
