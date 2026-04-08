@@ -1,0 +1,57 @@
+<footer class="surface-900 text-white mt-8">
+    <div class="grid p-4 md:p-6 lg:p-8 m-0">
+        
+        <div class="col-12 md:col-6 lg:col-4 p-3">
+            <div class="flex flex-column gap-3">
+                <span class="text-2xl font-bold tracking-tight">Sree J Builders LLP</span>
+                <p class="text-gray-400 line-height-3 m-0" style="max-width: 350px;">
+                    Specializes in modern construction, delivering innovative, sustainable, and high-quality spaces.
+                </p>
+                <div class="flex gap-2">
+                    <p-button icon="pi pi-instagram" [text]="true" [rounded]="true" severity="secondary"></p-button>
+                    <p-button icon="pi pi-facebook" [text]="true" [rounded]="true" severity="secondary"></p-button>
+                    <p-button icon="pi pi-linkedin" [text]="true" [rounded]="true" severity="secondary"></p-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 md:col-3 lg:col-2 p-3">
+            <h4 class="text-white mb-3 uppercase font-semibold text-sm">Quick Links</h4>
+            <ul class="list-none p-0 m-0 text-gray-400">
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">Home</li>
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">Projects</li>
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">About</li>
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">Contact</li>
+            </ul>
+        </div>
+
+        <div class="col-6 md:col-3 lg:col-2 p-3">
+            <h4 class="text-white mb-3 uppercase font-semibold text-sm">Support</h4>
+            <ul class="list-none p-0 m-0 text-gray-400">
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">Privacy Policy</li>
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">Terms of Use</li>
+                <li class="mb-2 cursor-pointer hover:text-white transition-colors transition-duration-200">FAQ</li>
+            </ul>
+        </div>
+
+        <div class="col-12 md:col-12 lg:col-4 p-3">
+            <h4 class="text-white mb-3 uppercase font-semibold text-sm">Contact Us</h4>
+            <div class="flex flex-column gap-3">
+                <div class="flex align-items-center gap-3 text-gray-400">
+                    <i class="pi pi-map-marker text-primary"></i>
+                    <span>9th cross, L. N. PURAM, Bangalore - 560 021</span>
+                </div>
+                <div class="flex align-items-center gap-3 text-gray-400">
+                    <i class="pi pi-envelope text-primary"></i>
+                    <span>sreejbuilders@gmail.com</span>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <div class="border-top-1 border-gray-800 p-4 text-center">
+        <span class="text-gray-500 text-sm">
+            © {{ year | date: 'yyyy' }} Sree J Builders LLP. All rights reserved.
+        </span>
+    </div>
+</footer>
