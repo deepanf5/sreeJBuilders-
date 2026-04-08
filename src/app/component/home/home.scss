@@ -6,7 +6,7 @@
     background-attachment: fixed; /* Keeps it from scrolling with the page */
     background-repeat: no-repeat;
     background-image:
-    linear-gradient(to top, oklch(13.979% 0.00002 271.152 / 0.966),rgba(217, 217, 217, 0.096)),
+    linear-gradient(to top, oklch(13.979% 0.00002 271.152 / 0.966),rgba(14, 13, 13, 0.103)),
     url(../../../../public/images/hero.jpg);
 }
 
@@ -24,7 +24,7 @@
 
 
 .hero-text {
-    font-size: 4rem;
+    font-size: rem;
 }
 
 @media screen and (min-width:1024px) {
@@ -47,7 +47,7 @@
 
 @media screen and (min-width:1024px) {
     ::ng-deep .p-card {
-        width: 35rem;
+        width: 38rem;
         height: 24rem;
     }
     
